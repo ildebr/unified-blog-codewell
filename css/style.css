@@ -1,0 +1,193 @@
+*, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+div.container{
+	width: 100%;
+
+	padding: 2rem 1rem;	
+	min-width: 320px;
+}
+
+header{
+	height: 35px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 0;
+	box-sizing: content-box;
+}
+
+header ul{
+	display: none;
+}
+
+div.logo, div.menu{
+	display: contents;
+}
+
+.header-img{
+	height: 100%;
+}
+
+.header-img.menu{
+	max-height: 20px;
+}
+
+section.articles article {
+	margin: 2rem 0;
+}
+
+
+section.articles article > img{
+	width: 100%;
+	margin-bottom: 0.5rem;
+}
+
+section.articles article h2{
+	text-transform: capitalize;
+
+}
+
+section.articles article p{
+	color: #333;
+	margin: 1rem 0;
+}
+
+div.byline{
+	height: 70px;
+	display: flex;
+	align-items: center;
+}
+
+div.byline img.byline-img{
+	height: 100%;
+	width: auto;
+}
+
+div.byline div.byline-text{
+	display: inline-block;
+	margin-left: 1rem;
+}
+
+div.byline div.byline-text h4{
+	font-weight: 900;
+}
+
+div.byline div.byline-text h5{
+	color: #333;
+}
+
+p.copyright{
+	color: #444;
+}
+
+@media only screen and (min-width: 650px){
+
+	div.container{
+		max-width: 850px;
+		margin: 0 auto;
+
+		padding-right: 3rem;
+		padding-left: 3rem;
+	}
+
+	header{
+		height: fit-content;
+	}
+	section.articles article > img{
+		height: 320px;
+		object-fit: cover;
+	}
+
+	div.menu{
+		display: none;
+	}
+
+	header ul{
+		display: flex;
+		width: 100%;
+
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	header ul >li{
+		padding: 1rem;
+
+		
+	}
+
+	header ul >li:last-of-type{
+		background-color: orange;
+		border-radius: 4px;
+	}
+
+	header ul > li > a{
+		color: #333;
+		text-decoration: none;
+	}
+}
+
+@media only screen and (min-width: 880px){
+	div.container{
+		max-width: 1000px;
+	}
+
+	section{
+		display: grid;
+		grid-template-columns: repeat(29,1fr);
+	}
+
+	section article.main{
+		grid-column: 1/-1;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	section article.main img{
+		grid-column: 1/2;
+		height: 200px;
+		width: 270px;
+		grid-row:1;
+	}
+
+	section article.main div.text-section{
+		grid-column:2/-1;
+		padding-left: 2rem;
+	}
+
+	div.byline{
+		height: 55px;
+		display: flex;
+		align-items: center;
+	}
+
+	section.articles article > img{
+		height: 200px;
+	}
+
+	.article-1{
+		grid-column:1/10;
+	}
+
+	.article-2{
+		grid-column:11/20;
+	}
+
+	.article-3{
+		grid-column:21/-1;
+	}
+}
